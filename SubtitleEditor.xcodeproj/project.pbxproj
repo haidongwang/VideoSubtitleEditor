@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E1E0F9621D4B0BE000D2237 /* ASSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E0F9521D4B0BE000D2237 /* ASSManager.m */; };
+		8E6279DF21DA1A0E00F1EB89 /* ASSEventsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279DE21DA1A0E00F1EB89 /* ASSEventsSection.m */; };
+		8E6279E221DA1EE200F1EB89 /* ASSEventDialogLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279E121DA1EE200F1EB89 /* ASSEventDialogLine.m */; };
+		8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */; };
+		8E6279EF21DCE25900F1EB89 /* ASSDialogTimeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */; };
 		8ECF65E921D25B3600AC1D27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF65E821D25B3600AC1D27 /* AppDelegate.m */; };
 		8ECF65EB21D25B3800AC1D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECF65EA21D25B3800AC1D27 /* Assets.xcassets */; };
 		8ECF65EE21D25B3800AC1D27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECF65EC21D25B3800AC1D27 /* MainMenu.xib */; };
@@ -19,6 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E1E0F9421D4B0BE000D2237 /* ASSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSManager.h; sourceTree = "<group>"; };
+		8E1E0F9521D4B0BE000D2237 /* ASSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSManager.m; sourceTree = "<group>"; };
+		8E6279DD21DA1A0E00F1EB89 /* ASSEventsSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSEventsSection.h; sourceTree = "<group>"; };
+		8E6279DE21DA1A0E00F1EB89 /* ASSEventsSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSEventsSection.m; sourceTree = "<group>"; };
+		8E6279E021DA1EE200F1EB89 /* ASSEventDialogLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSEventDialogLine.h; sourceTree = "<group>"; };
+		8E6279E121DA1EE200F1EB89 /* ASSEventDialogLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSEventDialogLine.m; sourceTree = "<group>"; };
+		8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSDialogText.m; sourceTree = "<group>"; };
+		8E6279EB21DCE25900F1EB89 /* ASSDialogTimeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSDialogTimeFrame.h; sourceTree = "<group>"; };
+		8E6279EC21DCE25900F1EB89 /* ASSDialogText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSDialogText.h; sourceTree = "<group>"; };
+		8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSDialogTimeFrame.m; sourceTree = "<group>"; };
 		8ECF65E421D25B3600AC1D27 /* SubtitleEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECF65E721D25B3600AC1D27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8ECF65E821D25B3600AC1D27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E6279E921DCE25900F1EB89 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				8E6279EC21DCE25900F1EB89 /* ASSDialogText.h */,
+				8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */,
+				8E6279EB21DCE25900F1EB89 /* ASSDialogTimeFrame.h */,
+				8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 		8ECF65DB21D25B3600AC1D27 = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +122,17 @@
 		8ECF660D21D3F27300AC1D27 /* ASS */ = {
 			isa = PBXGroup;
 			children = (
+				8E6279E921DCE25900F1EB89 /* Dialog */,
 				8ECF660E21D3F27300AC1D27 /* ASSSection.h */,
 				8ECF660F21D3F27300AC1D27 /* ASSFileLoader.h */,
 				8ECF661021D3F27300AC1D27 /* ASSSection.m */,
 				8ECF661121D3F27300AC1D27 /* ASSFileLoader.mm */,
+				8E1E0F9421D4B0BE000D2237 /* ASSManager.h */,
+				8E1E0F9521D4B0BE000D2237 /* ASSManager.m */,
+				8E6279DD21DA1A0E00F1EB89 /* ASSEventsSection.h */,
+				8E6279DE21DA1A0E00F1EB89 /* ASSEventsSection.m */,
+				8E6279E021DA1EE200F1EB89 /* ASSEventDialogLine.h */,
+				8E6279E121DA1EE200F1EB89 /* ASSEventDialogLine.m */,
 			);
 			path = ASS;
 			sourceTree = "<group>";
@@ -174,11 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */,
 				8ECF660321D3A7E200AC1D27 /* SEMainWindowController.m in Sources */,
 				8ECF65F121D25B3800AC1D27 /* main.m in Sources */,
 				8ECF661321D3F27400AC1D27 /* ASSFileLoader.mm in Sources */,
+				8E6279EF21DCE25900F1EB89 /* ASSDialogTimeFrame.m in Sources */,
 				8ECF660021D3A6D300AC1D27 /* SEApplicationController.m in Sources */,
 				8ECF661221D3F27400AC1D27 /* ASSSection.m in Sources */,
+				8E1E0F9621D4B0BE000D2237 /* ASSManager.m in Sources */,
+				8E6279DF21DA1A0E00F1EB89 /* ASSEventsSection.m in Sources */,
+				8E6279E221DA1EE200F1EB89 /* ASSEventDialogLine.m in Sources */,
 				8ECF65E921D25B3600AC1D27 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,7 +348,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SubtitleEditor/SubtitleEditor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SubtitleEditor/Info.plist;
@@ -327,7 +364,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = SubtitleEditor/SubtitleEditor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SubtitleEditor/Info.plist;

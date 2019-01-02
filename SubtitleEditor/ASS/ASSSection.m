@@ -11,8 +11,6 @@
 @interface ASSSection () {
     
 }
-@property (nonatomic, readwrite) NSString* sectionTitle;
-@property (nonatomic, readwrite) NSArray* sectionLines;
 
 @end
 
@@ -31,8 +29,19 @@
     self.sectionTitle = title;
 }
 
--(void) setLines:(NSArray*)lines {
+-(void) setLines:(NSMutableArray*)lines {
     self.sectionLines = lines;
+}
+
+-(void) parseLines {
+    // Do nothing here
+}
+
+-(NSArray*) getOutputLines {
+    NSMutableArray* arr = [NSMutableArray array];
+    [arr addObject:[NSString stringWithFormat:@"[%@]", self.sectionTitle]];
+    [arr addObjectsFromArray:self.sectionLines];
+    return arr;
 }
 
 @end

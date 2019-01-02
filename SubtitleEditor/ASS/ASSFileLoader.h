@@ -14,7 +14,7 @@
     
 }
 
--(void) loadFrowRawData:(NSData*)data;
+-(void) loadFrowRawData:(NSData*)data sections:(NSMutableArray*)sections;
 
 @end
 

@@ -7,14 +7,16 @@
 //
 
 #import "SEMainWindowController.h"
-#import "ASSFileLoader.h"
+#import "ASSManager.h"
 
 @interface SEMainWindowController() <NSTableViewDelegate, NSTableViewDataSource>
 {
     
 }
 @property (strong) IBOutlet NSTableView *tableView;
-@property (strong) ASSFileLoader *assFileLoader;
+@property (weak) IBOutlet NSWindow* mainWindow;
+@property (strong) ASSManager *assManager;
+
 @end
 
 @implementation SEMainWindowController
@@ -22,7 +24,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.assFileLoader = [[ASSFileLoader alloc] init];
+    self.assManager = [[ASSManager alloc] init];
+    self.assManager.window = self.mainWindow;
 }
 
 #pragma mark - NSTableViewDataSource
@@ -129,16 +132,12 @@
 #pragma mark - UI control callback
 
 -(IBAction)onOpenButtonClicked:(id)sender {
-    [self loadTestAssFile];
+    [self.assManager loadTestFile];
 }
 
--(void) loadTestAssFile {
-    NSBundle *myBundle = [NSBundle mainBundle];
-    NSString *assFilePath = [myBundle pathForResource:@"test1" ofType:@"ass"];
-
-    NSData* rawData = [NSData dataWithContentsOfFile:assFilePath];
-
-    [self.assFileLoader loadFrowRawData:rawData];
+-(IBAction)onSaveButtonClicked:(id)sender {
+    [self.assManager saveTestFile];
 }
+
 
 @end

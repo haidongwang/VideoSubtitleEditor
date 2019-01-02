@@ -8,12 +8,11 @@
 
 #import "ASSFileLoader.h"
 #import "ASSSection.h"
+#import "ASSEventsSection.h"
 
 @interface ASSFileLoader () {
     
 }
-
-@property (strong) NSMutableArray* sections;
 
 @end
 
@@ -25,12 +24,10 @@
         return nil;
     }
     
-    self.sections = [NSMutableArray array];
-    
     return self;
 }
 
--(void) loadFrowRawData:(NSData*)data {
+-(void) loadFrowRawData:(NSData*)data sections:(NSMutableArray*)sections {
     if (!data) {
         return;
     }
@@ -39,11 +36,11 @@
     NSArray* lines = [utf8String componentsSeparatedByString:@"\n"];
     NSMutableArray* mutableLines = [NSMutableArray arrayWithArray:lines];
     
-    while ([self getNextSection:mutableLines]) {
+    while ([self getNextSection:mutableLines sections:sections]) {
     };
 }
 
--(BOOL) getNextSection:(NSMutableArray*)lines {
+-(BOOL) getNextSection:(NSMutableArray*)lines sections:(NSMutableArray*)sections {
     NSInteger sectionStartLine = 0;
     for (NSInteger i = 0; i < lines.count; ++i) {
         if ([self isSectionTitleLine:lines[i]]) {
@@ -64,8 +61,14 @@
         }
     }
     
-    ASSSection* section = [[ASSSection alloc] init];
-    [section setTitle:[self getSectionTitle:lines[sectionStartLine]]];
+    NSString* title = [self getSectionTitle:lines[sectionStartLine]];
+    ASSSection* section = nil;
+    if ([title isEqualToString:@"Events"]) {
+        section = [[ASSEventsSection alloc] init];
+    } else {
+        section = [[ASSSection alloc] init];
+    }
+    [section setTitle:title];
     NSMutableArray* sectionLines = [NSMutableArray array];
     for (NSInteger i = sectionStartLine + 1; i < sectionEndLine; ++i) {
         [sectionLines addObject:lines[i]];
@@ -75,7 +78,7 @@
     NSRange range = NSMakeRange(sectionStartLine, sectionEndLine - sectionStartLine);
     [lines removeObjectsInRange:range];
     
-    [self.sections addObject:section];
+    [sections addObject:section];
     NSLog(@"++++++++++++ %ld --> %ld", sectionStartLine, sectionEndLine);
 //    NSLog(@"++++++++++ title:%@ count:%ld", section.title, section.lines.count);
     
@@ -106,6 +109,7 @@
     
     return nil;
 }
+
 
 @end
 

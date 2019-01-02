@@ -13,5 +13,6 @@
 }
 
 -(IBAction)onOpenButtonClicked:(id)sender;
+-(IBAction)onSaveButtonClicked:(id)sender;
 
 @end

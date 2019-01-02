@@ -12,7 +12,12 @@
     
 }
 
+@property (nonatomic, readwrite) NSString* sectionTitle;
+@property (nonatomic, readwrite) NSMutableArray* sectionLines;
+
 -(void) setTitle:(NSString*)title;
--(void) setLines:(NSArray*)lines;
+-(void) setLines:(NSMutableArray*)lines;
+-(void) parseLines;
+-(NSArray*) getOutputLines;
 
 @end
