@@ -12,11 +12,12 @@
 		8E6279E221DA1EE200F1EB89 /* ASSEventDialogLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279E121DA1EE200F1EB89 /* ASSEventDialogLine.m */; };
 		8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */; };
 		8E6279EF21DCE25900F1EB89 /* ASSDialogTimeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */; };
+		8E6279F121DCE3E700F1EB89 /* TestResources in Resources */ = {isa = PBXBuildFile; fileRef = 8E6279F021DCE3E700F1EB89 /* TestResources */; };
+		8E6279F421DF6D1E00F1EB89 /* ASSDialogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279F321DF6D1E00F1EB89 /* ASSDialogTableViewController.m */; };
 		8ECF65E921D25B3600AC1D27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF65E821D25B3600AC1D27 /* AppDelegate.m */; };
 		8ECF65EB21D25B3800AC1D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECF65EA21D25B3800AC1D27 /* Assets.xcassets */; };
 		8ECF65EE21D25B3800AC1D27 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECF65EC21D25B3800AC1D27 /* MainMenu.xib */; };
 		8ECF65F121D25B3800AC1D27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF65F021D25B3800AC1D27 /* main.m */; };
-		8ECF65FD21D3A45D00AC1D27 /* test1.ass in Resources */ = {isa = PBXBuildFile; fileRef = 8ECF65FC21D3A45D00AC1D27 /* test1.ass */; };
 		8ECF660021D3A6D300AC1D27 /* SEApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF65FF21D3A6D300AC1D27 /* SEApplicationController.m */; };
 		8ECF660321D3A7E200AC1D27 /* SEMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF660221D3A7E200AC1D27 /* SEMainWindowController.m */; };
 		8ECF661221D3F27400AC1D27 /* ASSSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF661021D3F27300AC1D27 /* ASSSection.m */; };
@@ -34,6 +35,9 @@
 		8E6279EB21DCE25900F1EB89 /* ASSDialogTimeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSDialogTimeFrame.h; sourceTree = "<group>"; };
 		8E6279EC21DCE25900F1EB89 /* ASSDialogText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSDialogText.h; sourceTree = "<group>"; };
 		8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSDialogTimeFrame.m; sourceTree = "<group>"; };
+		8E6279F021DCE3E700F1EB89 /* TestResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestResources; sourceTree = "<group>"; };
+		8E6279F221DF6D1E00F1EB89 /* ASSDialogTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSDialogTableViewController.h; sourceTree = "<group>"; };
+		8E6279F321DF6D1E00F1EB89 /* ASSDialogTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSDialogTableViewController.m; sourceTree = "<group>"; };
 		8ECF65E421D25B3600AC1D27 /* SubtitleEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubtitleEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECF65E721D25B3600AC1D27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8ECF65E821D25B3600AC1D27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,7 +46,6 @@
 		8ECF65EF21D25B3800AC1D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECF65F021D25B3800AC1D27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8ECF65F221D25B3800AC1D27 /* SubtitleEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SubtitleEditor.entitlements; sourceTree = "<group>"; };
-		8ECF65FC21D3A45D00AC1D27 /* test1.ass */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test1.ass; sourceTree = "<group>"; };
 		8ECF65FE21D3A6D300AC1D27 /* SEApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEApplicationController.h; sourceTree = "<group>"; };
 		8ECF65FF21D3A6D300AC1D27 /* SEApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEApplicationController.m; sourceTree = "<group>"; };
 		8ECF660121D3A7E200AC1D27 /* SEMainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEMainWindowController.h; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 				8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */,
 				8E6279EB21DCE25900F1EB89 /* ASSDialogTimeFrame.h */,
 				8E6279ED21DCE25900F1EB89 /* ASSDialogTimeFrame.m */,
+				8E6279F221DF6D1E00F1EB89 /* ASSDialogTableViewController.h */,
+				8E6279F321DF6D1E00F1EB89 /* ASSDialogTableViewController.m */,
 			);
 			path = Dialog;
 			sourceTree = "<group>";
@@ -102,21 +107,13 @@
 				8ECF660121D3A7E200AC1D27 /* SEMainWindowController.h */,
 				8ECF660221D3A7E200AC1D27 /* SEMainWindowController.m */,
 				8ECF65EA21D25B3800AC1D27 /* Assets.xcassets */,
+				8E6279F021DCE3E700F1EB89 /* TestResources */,
 				8ECF65EC21D25B3800AC1D27 /* MainMenu.xib */,
 				8ECF65EF21D25B3800AC1D27 /* Info.plist */,
 				8ECF65F021D25B3800AC1D27 /* main.m */,
-				8ECF65FB21D3A43900AC1D27 /* Resources */,
 				8ECF65F221D25B3800AC1D27 /* SubtitleEditor.entitlements */,
 			);
 			path = SubtitleEditor;
-			sourceTree = "<group>";
-		};
-		8ECF65FB21D3A43900AC1D27 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8ECF65FC21D3A45D00AC1D27 /* test1.ass */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		8ECF660D21D3F27300AC1D27 /* ASS */ = {
@@ -195,8 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECF65EB21D25B3800AC1D27 /* Assets.xcassets in Resources */,
+				8E6279F121DCE3E700F1EB89 /* TestResources in Resources */,
 				8ECF65EE21D25B3800AC1D27 /* MainMenu.xib in Resources */,
-				8ECF65FD21D3A45D00AC1D27 /* test1.ass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +207,7 @@
 				8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */,
 				8ECF660321D3A7E200AC1D27 /* SEMainWindowController.m in Sources */,
 				8ECF65F121D25B3800AC1D27 /* main.m in Sources */,
+				8E6279F421DF6D1E00F1EB89 /* ASSDialogTableViewController.m in Sources */,
 				8ECF661321D3F27400AC1D27 /* ASSFileLoader.mm in Sources */,
 				8E6279EF21DCE25900F1EB89 /* ASSDialogTimeFrame.m in Sources */,
 				8ECF660021D3A6D300AC1D27 /* SEApplicationController.m in Sources */,

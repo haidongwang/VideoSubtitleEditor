@@ -9,16 +9,19 @@
 #import "ASSManager.h"
 #import "ASSFileLoader.h"
 #import "ASSSection.h"
+#import "ASSEventsSection.h"
 
 @interface ASSManager()
 @property (strong) ASSFileLoader *assFileLoader;
 @property (strong) NSMutableArray* sections;
 @property (strong) NSString* outputFileURL;
+@property (weak) ASSEventsSection* eventSection;
 @end
 
 @implementation ASSManager
 
 -(id) init {
+    NSLog(@"++++++++++++ assmanager init.");
     self = [super init];
     if (!self) {
         return nil;
@@ -32,16 +35,32 @@
 
 -(void) loadTestFile {
     NSBundle *myBundle = [NSBundle mainBundle];
-    NSString *assFilePath = [myBundle pathForResource:@"test1" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test1" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test2" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test3" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test4" ofType:@"ass"];
+    NSString *assFilePath = [myBundle pathForResource:@"TestResources/short" ofType:@"ass"];
     NSLog(@"+++++++++ ass file path:%@", assFilePath);
     
     NSData* rawData = [NSData dataWithContentsOfFile:assFilePath];
     
     [self.assFileLoader loadFrowRawData:rawData sections:self.sections];
     for (int i = 0; i < self.sections.count; ++i) {
+        if ([self.sections[i] isKindOfClass:[ASSEventsSection class]]) {
+            self.eventSection = self.sections[i];
+        }
         [self.sections[i] parseLines];
     }
+    NSLog(@"+++++++++ %@", self.eventSection);
     
+}
+
+-(NSInteger) getDialogLinesCount {
+    if (!self.eventSection) {
+        return 0;
+    }
+    NSLog(@"++++++++++++++++ getDialogLinesCount:%@", self.eventSection);
+    return [self.eventSection getDialogLinesCount];
 }
 
 -(void) saveTestFile {
@@ -109,5 +128,24 @@
     
 }
 
+-(NSString*) getDialogStartTimeTextOfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogStartTimeOfLine:rowIndex];
+}
+
+-(NSString*) getDialogEndTimeTextOfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogEndTimeOfLine:rowIndex];
+}
+
+-(NSString*) getDialogDefaultStyleOfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogDefaultStyleNameOfLine:rowIndex];
+}
+
+-(NSString*) getDialogText1OfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogText1OfLine:rowIndex];
+}
+
+-(NSString*) getDialogText2OfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogText2OfLine:rowIndex];
+}
 
 @end

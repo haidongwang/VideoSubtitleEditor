@@ -84,8 +84,10 @@
     [textLine appendString:self.effect];
     [textLine appendString:@","];
     [textLine appendString:[self.text1 getOutputText]];
-    [textLine appendString:@"\\N"];
-    [textLine appendString:[self.text2 getOutputText]];
+    if (![self.text2 isEmpty]) {
+        [textLine appendString:@"\\N"];
+        [textLine appendString:[self.text2 getOutputText]];
+    }
     
     return textLine;
 }
@@ -221,5 +223,24 @@
     return position;
 }
 
+-(NSString*) getDialogStartTimeText {
+    return [self.startTime getOutputText];
+}
+
+-(NSString*) getDialogEndTimeText {
+    return [self.endTime getOutputText];
+}
+
+-(NSString*) getDefaultStyleName {
+    return self.styleName;
+}
+
+-(NSString*) getDialogText1 {
+    return [self.text1 getOutputText];
+}
+
+-(NSString*) getDialogText2 {
+    return [self.text2 getOutputText];
+}
 
 @end

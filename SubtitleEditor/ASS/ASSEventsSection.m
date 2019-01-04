@@ -65,4 +65,28 @@
     return NO;
 }
 
+-(NSInteger) getDialogLinesCount {
+    return self.dialogLines.count;
+}
+
+-(NSString*) getDialogStartTimeOfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogStartTimeText];
+}
+
+-(NSString*) getDialogEndTimeOfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogEndTimeText];
+}
+
+-(NSString*) getDialogDefaultStyleNameOfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDefaultStyleName];
+}
+
+-(NSString*) getDialogText1OfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogText1];
+}
+
+-(NSString*) getDialogText2OfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogText2];
+}
+
 @end

@@ -14,5 +14,9 @@
 
 -(id) initWithText:(NSString*)text;
 -(NSString*) getOutputTextLine;
-
+-(NSString*) getDialogStartTimeText;
+-(NSString*) getDialogEndTimeText;
+-(NSString*) getDefaultStyleName;
+-(NSString*) getDialogText1;
+-(NSString*) getDialogText2;
 @end

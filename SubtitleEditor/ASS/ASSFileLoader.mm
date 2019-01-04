@@ -9,6 +9,7 @@
 #import "ASSFileLoader.h"
 #import "ASSSection.h"
 #import "ASSEventsSection.h"
+#import <Cocoa/Cocoa.h>
 
 @interface ASSFileLoader () {
     
@@ -32,10 +33,27 @@
         return;
     }
     
-    NSString* utf8String = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray* lines = [utf8String componentsSeparatedByString:@"\n"];
-    NSMutableArray* mutableLines = [NSMutableArray arrayWithArray:lines];
+    NSMutableString* assText = [[NSMutableString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
+//    if (!assText) {
+//        assText = [[NSString alloc] initWithData:data encoding:NSUTF16LittleEndianStringEncoding];
+//    }
+    
+    if (!assText) {
+        assText = [[NSMutableString alloc] initWithData:data encoding:NSUTF16StringEncoding];
+    }
+
+    if (!assText) {
+        NSAlert* alert = [[NSAlert alloc] init];
+        alert.messageText = @"Failed to load file.";
+        [alert runModal];
+    }
+    
+    [assText replaceOccurrencesOfString:@"\r" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, assText.length)];
+    
+    NSArray* lines = [assText componentsSeparatedByString:@"\n"];
+    NSMutableArray* mutableLines = [NSMutableArray arrayWithArray:lines];
+
     while ([self getNextSection:mutableLines sections:sections]) {
     };
 }

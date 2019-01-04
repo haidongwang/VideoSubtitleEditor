@@ -13,5 +13,11 @@
 
 -(NSArray*) getOutputLines;
 -(void) parseLines;
+-(NSInteger) getDialogLinesCount;
+-(NSString*) getDialogStartTimeOfLine:(NSInteger)lineIndex;
+-(NSString*) getDialogEndTimeOfLine:(NSInteger)lineIndex;
+-(NSString*) getDialogDefaultStyleNameOfLine:(NSInteger)lineIndex;
+-(NSString*) getDialogText1OfLine:(NSInteger)lineIndex;
+-(NSString*) getDialogText2OfLine:(NSInteger)lineIndex;
 
 @end

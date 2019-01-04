@@ -7,10 +7,13 @@
 //
 
 @import Cocoa;
+#import "ASSDialogTableViewController.h"
 
 @interface SEMainWindowController : NSObject {
     
 }
+
+@property (weak) IBOutlet ASSDialogTableViewController* dialogTableViewController;
 
 -(IBAction)onOpenButtonClicked:(id)sender;
 -(IBAction)onSaveButtonClicked:(id)sender;

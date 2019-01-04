@@ -15,5 +15,11 @@
 
 -(void) loadTestFile;
 -(void) saveTestFile;
+-(NSInteger) getDialogLinesCount;
+-(NSString*) getDialogStartTimeTextOfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogEndTimeTextOfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogDefaultStyleOfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogText1OfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogText2OfRow:(NSInteger)rowIndex;
 
 @end

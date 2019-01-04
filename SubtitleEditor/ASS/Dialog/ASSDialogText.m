@@ -32,4 +32,8 @@
     return self.text;
 }
 
+-(BOOL) isEmpty {
+    return self.text.length == 0;
+}
+
 @end
