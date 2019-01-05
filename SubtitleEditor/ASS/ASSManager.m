@@ -34,6 +34,8 @@
 }
 
 -(void) loadTestFile {
+    self.sections = [NSMutableArray array];
+    
     NSBundle *myBundle = [NSBundle mainBundle];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test1" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test2" ofType:@"ass"];
@@ -45,6 +47,13 @@
     NSLog(@"+++++++++ ass file path:%@", assFilePath);
     
     NSData* rawData = [NSData dataWithContentsOfFile:assFilePath];
+    [self loadASSData:rawData];
+}
+
+-(void) loadFileFromURL:(NSURL*)url {
+    self.sections = [NSMutableArray array];
+    
+    NSData* rawData = [NSData dataWithContentsOfFile:[url path]];
     [self loadASSData:rawData];
 }
 
@@ -72,57 +81,30 @@
 
 -(void) saveTestFile {
     NSString* outputFilePath = @"/Users/ocean/Downloads/test1.ass";
+    [self saveASSFile:outputFilePath];
+}
+
+-(void) saveASSFileAs:(NSURL*)url {
+    [self saveASSFile:[url path]];
+}
+
+-(void) saveASSFile:(NSString*)filePath {
     NSMutableArray* allLines = [NSMutableArray array];
     for (int i = 0; i < self.sections.count; ++i) {
         NSArray* sectionLines = [self.sections[i] getOutputLines];
         [allLines addObjectsFromArray:sectionLines];
     }
-
+    
     NSMutableData* data = [NSMutableData data];
     for (int i = 0; i < allLines.count; ++i) {
         NSData* lineData = [allLines[i] dataUsingEncoding:NSUTF8StringEncoding];
         [data appendData:lineData];
         [data appendData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
     }
-
+    
     NSError* error = nil;
-    BOOL writeResult = [data writeToFile:outputFilePath options:NSDataWritingAtomic error:&error];
-    NSLog(@"+++++++++++++ data:%ld write to path:%@, result:%d, error:%@", data.length,  outputFilePath, writeResult, error);
-
-//    if (!self.outputFileURL) {
-//        NSSavePanel*   panel = [NSSavePanel savePanel];
-//        [panel setNameFieldStringValue:@""];
-//        NSArray *allowedFileTypes = [NSArray arrayWithObject:@"ass"];
-//        [panel setAllowedFileTypes:allowedFileTypes];
-//        [panel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
-//            if (result == NSModalResponseOK) {
-//                self.outputFileURL = [panel URL];
-//                NSURL* theFile = [panel URL];
-//                LevelWriter* writer = [[LevelWriter alloc] init];
-//                [writer writeToFile:theFile info:&levelInfo_];
-//                self.fileURL = theFile;
-//                self.workingPath = [fileURL_.path stringByDeletingLastPathComponent];
-//                isModificationSaved_ = YES;
-//                NSArray *pathComponents = self.fileURL.pathComponents;
-//                if (pathComponents.count > 0) {
-//                    self.fileName = [pathComponents objectAtIndex:pathComponents.count - 1];
-//                    workingLevelIndex_ = (int)[[self.fileName substringWithRange:NSMakeRange(5, 8)] integerValue] - 1;
-//                    [self updateUploadButtonState];
-//                }
-//
-//                [self updateTitle];
-//                [self updateSaveButtonState];
-//                [self updateDeleteButtonState];
-//            }
-//        }];
-//    } else {
-//        LevelWriter* writer = [[LevelWriter alloc] init];
-//        [writer writeToFile:self.fileURL info:&levelInfo_];
-//        isModificationSaved_ = YES;
-//        [self updateTitle];
-//        [self updateSaveButtonState];
-//    }
-
+    BOOL writeResult = [data writeToFile:filePath options:NSDataWritingAtomic error:&error];
+    NSLog(@"+++++++++++++ data:%ld write to path:%@, result:%d, error:%@", data.length,  filePath, writeResult, error);
 }
 
 -(NSString *) datafilepath{

@@ -19,6 +19,8 @@
 
 -(void) loadTestFile;
 -(void) saveTestFile;
+-(void) loadFileFromURL:(NSURL*)url;
+-(void) saveASSFileAs:(NSURL*)url;
 -(NSInteger) getDialogLinesCount;
 -(NSString*) getDialogStartTimeTextOfRow:(NSInteger)rowIndex;
 -(NSString*) getDialogEndTimeTextOfRow:(NSInteger)rowIndex;

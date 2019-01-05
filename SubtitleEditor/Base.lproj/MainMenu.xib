@@ -701,9 +701,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kxi-Kx-NcF">
-                        <rect key="frame" x="821" y="377" width="70" height="32"/>
+                        <rect key="frame" x="802" y="377" width="88" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14w-WM-Sqo">
+                        <buttonCell key="cell" type="push" title="Save As" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="14w-WM-Sqo">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -981,6 +981,7 @@
                 <outlet property="mainWindow" destination="QvC-M9-y7g" id="AQU-JE-gT4"/>
                 <outlet property="sortButton" destination="ZA8-mv-AKu" id="YsU-XP-qwx"/>
                 <outlet property="tableView" destination="ZDH-hm-g9V" id="MjQ-SY-8DT"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="O7p-hR-S7g"/>
             </connections>
         </customObject>
         <customObject id="kfl-iU-G8f" userLabel="ASSDialogTableViewController" customClass="ASSDialogTableViewController">
