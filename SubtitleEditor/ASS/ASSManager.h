@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+@class ASSDialogTableViewController;
+@class ASSEventsSection;
 @interface ASSManager : NSObject
 
 @property (weak) NSWindow* window;
+@property (weak) ASSDialogTableViewController* tableViewController;
+@property (weak) ASSEventsSection* eventSection;
 
 -(void) loadTestFile;
 -(void) saveTestFile;
@@ -21,5 +25,8 @@
 -(NSString*) getDialogDefaultStyleOfRow:(NSInteger)rowIndex;
 -(NSString*) getDialogText1OfRow:(NSInteger)rowIndex;
 -(NSString*) getDialogText2OfRow:(NSInteger)rowIndex;
+
+-(void) checkDialogsStartTimeSequences;
+-(void) sortDialogsByStartTime;
 
 @end

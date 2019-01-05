@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ASSManager.h"
 
+@class ASSEventsSection;
 @interface ASSDialogTableViewController : NSObject
 
 @property (weak) ASSManager *assManager;
+@property (weak) ASSEventsSection *eventSection;
+@property (weak) IBOutlet NSButton* sortButton;
+
+-(void) markStartTimeWarningForRow:(NSInteger)rowIndex;
 
 @end

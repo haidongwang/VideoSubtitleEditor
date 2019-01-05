@@ -10,12 +10,12 @@
 #import "ASSFileLoader.h"
 #import "ASSSection.h"
 #import "ASSEventsSection.h"
+#import "ASSDialogTableViewController.h"
 
 @interface ASSManager()
 @property (strong) ASSFileLoader *assFileLoader;
 @property (strong) NSMutableArray* sections;
 @property (strong) NSString* outputFileURL;
-@property (weak) ASSEventsSection* eventSection;
 @end
 
 @implementation ASSManager
@@ -39,20 +39,27 @@
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test2" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test3" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test4" ofType:@"ass"];
-    NSString *assFilePath = [myBundle pathForResource:@"TestResources/short" ofType:@"ass"];
+    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test5" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test6" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/short" ofType:@"ass"];
     NSLog(@"+++++++++ ass file path:%@", assFilePath);
     
     NSData* rawData = [NSData dataWithContentsOfFile:assFilePath];
-    
+    [self loadASSData:rawData];
+}
+
+-(void) loadASSData:(NSData*)rawData {
     [self.assFileLoader loadFrowRawData:rawData sections:self.sections];
     for (int i = 0; i < self.sections.count; ++i) {
         if ([self.sections[i] isKindOfClass:[ASSEventsSection class]]) {
             self.eventSection = self.sections[i];
+            self.eventSection.tableViewController = self.tableViewController;
+            self.tableViewController.eventSection = self.eventSection;
         }
         [self.sections[i] parseLines];
     }
-    NSLog(@"+++++++++ %@", self.eventSection);
     
+    [self checkDialogsStartTimeSequences];
 }
 
 -(NSInteger) getDialogLinesCount {
@@ -146,6 +153,14 @@
 
 -(NSString*) getDialogText2OfRow:(NSInteger)rowIndex {
     return [self.eventSection getDialogText2OfLine:rowIndex];
+}
+
+-(void) checkDialogsStartTimeSequences {
+    [self.eventSection checkDialogsStartTimeSequences];
+}
+
+-(void) sortDialogsByStartTime {
+    [self.eventSection sortDialogsByStartTime];
 }
 
 @end

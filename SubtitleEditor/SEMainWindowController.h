@@ -14,8 +14,10 @@
 }
 
 @property (weak) IBOutlet ASSDialogTableViewController* dialogTableViewController;
+@property (weak) IBOutlet NSButton* sortButton;
 
 -(IBAction)onOpenButtonClicked:(id)sender;
 -(IBAction)onSaveButtonClicked:(id)sender;
+-(IBAction)onSortButtonClicked:(id)sender;
 
 @end

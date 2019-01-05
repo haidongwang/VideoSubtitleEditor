@@ -243,4 +243,22 @@
     return [self.text2 getOutputText];
 }
 
+-(NSInteger) getStartTimeInMiliSeconds {
+    return [self.startTime getTotalMiliSeconds];
+}
+
+-(NSComparisonResult) compare:(ASSEventDialogLine*)otherLine {
+    NSInteger totalMiliSeconds = [self.startTime getTotalMiliSeconds];
+    NSInteger otherlineTotalMiliSeconds = [otherLine.startTime getTotalMiliSeconds];
+    
+    if (totalMiliSeconds < otherlineTotalMiliSeconds) {
+        return NSOrderedAscending;
+    } else if (totalMiliSeconds == otherlineTotalMiliSeconds) {
+        return NSOrderedSame;
+    } else {
+        return NSOrderedDescending;
+    }
+}
+
+
 @end

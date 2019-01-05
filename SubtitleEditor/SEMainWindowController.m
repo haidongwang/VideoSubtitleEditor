@@ -10,7 +10,7 @@
 #import "ASSManager.h"
 #import "ASSDialogTableViewController.h"
 
-@interface SEMainWindowController() <NSTableViewDelegate, NSTableViewDataSource>
+@interface SEMainWindowController()
 {
     
 }
@@ -29,7 +29,10 @@
         self.assManager = [[ASSManager alloc] init];
         self.assManager.window = self.mainWindow;
         self.dialogTableViewController.assManager = self.assManager;
+        self.assManager.tableViewController = self.dialogTableViewController;
     }
+    
+    [self.sortButton setEnabled:NO];
 }
 
 #pragma mark - UI control callback
@@ -37,11 +40,21 @@
 -(IBAction)onOpenButtonClicked:(id)sender {
     [self.assManager loadTestFile];
     [self.tableView reloadData];
+    
+    [self performSelectorOnMainThread:@selector(onTableIsReloaded) withObject:nil waitUntilDone:NO];
 }
 
 -(IBAction)onSaveButtonClicked:(id)sender {
     [self.assManager saveTestFile];
 }
 
+-(IBAction)onSortButtonClicked:(id)sender {
+    [self.assManager sortDialogsByStartTime];
+    [self.assManager checkDialogsStartTimeSequences];
+    [self.tableView reloadData];
+}
+
+-(void) onTableIsReloaded {
+}
 
 @end

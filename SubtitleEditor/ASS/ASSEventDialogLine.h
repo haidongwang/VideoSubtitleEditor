@@ -19,4 +19,7 @@
 -(NSString*) getDefaultStyleName;
 -(NSString*) getDialogText1;
 -(NSString*) getDialogText2;
+-(NSInteger) getStartTimeInMiliSeconds;
+
+-(NSComparisonResult) compare:(ASSEventDialogLine*)otherLine;
 @end

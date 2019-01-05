@@ -7,14 +7,16 @@
 //
 
 #import "ASSDialogTableViewController.h"
+#import "ASSEventsSection.h"
 
 @interface ASSDialogTableViewController() <NSTableViewDelegate, NSTableViewDataSource>
+@property (strong) IBOutlet NSTableView *tableView;
 @end
 
 @implementation ASSDialogTableViewController
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
+    [super awakeFromNib];    
 }
 
 #pragma mark - NSTableViewDataSource
@@ -62,32 +64,34 @@
     if (tableColumn == tableView.tableColumns[0]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogLineNumber" owner:self];
         cellView.textField.stringValue = [NSString stringWithFormat:@"%ld", row + 1];
-        cellView.imageView.image = nil;
         return cellView;
     } else if (tableColumn == tableView.tableColumns[1]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogStartTime" owner:self];
         cellView.textField.stringValue = [self.assManager getDialogStartTimeTextOfRow:row];
-        cellView.imageView.image = nil;
+        
+        if ([self.eventSection isStartTimeLessThenPreviousOne:row]) {
+            cellView.wantsLayer = YES;
+            cellView.layer.backgroundColor = [[NSColor yellowColor] CGColor];
+        } else {
+            cellView.layer.backgroundColor = [[NSColor clearColor] CGColor];
+        }
+        
         return cellView;
     } else if (tableColumn == tableView.tableColumns[2]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogEndTime" owner:self];
         cellView.textField.stringValue = [self.assManager getDialogEndTimeTextOfRow:row];
-        cellView.imageView.image = nil;
         return cellView;
     } else if (tableColumn == tableView.tableColumns[3]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogDefaultStyle" owner:self];
         cellView.textField.stringValue = [self.assManager getDialogDefaultStyleOfRow:row];
-        cellView.imageView.image = nil;
         return cellView;
     } else if (tableColumn == tableView.tableColumns[4]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogTopText" owner:self];
         cellView.textField.stringValue = [self.assManager getDialogText1OfRow:row];
-        cellView.imageView.image = nil;
         return cellView;
     } else if (tableColumn == tableView.tableColumns[5]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogBotText" owner:self];
         cellView.textField.stringValue = [self.assManager getDialogText2OfRow:row];
-        cellView.imageView.image = nil;
         return cellView;
     } else {
         return nil;
@@ -153,6 +157,15 @@
     //        }
     //    }
     return proposedSelectionIndexes;
+}
+
+-(void) markStartTimeWarningForRow:(NSInteger)rowIndex {
+    NSLog(@"+++++++++++++ mark warning for row:%ld", rowIndex);
+//    self.tableView.tableColumns[1].ro
+    NSTableCellView* cell = [self.tableView viewAtColumn:1 row:rowIndex makeIfNecessary:NO];
+    if (cell) {
+        cell.layer.backgroundColor = [[NSColor yellowColor] CGColor];
+    }
 }
 
 @end
