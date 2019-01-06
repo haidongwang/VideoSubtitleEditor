@@ -25,8 +25,8 @@
 -(NSString*) getDialogStartTimeTextOfRow:(NSInteger)rowIndex;
 -(NSString*) getDialogEndTimeTextOfRow:(NSInteger)rowIndex;
 -(NSString*) getDialogDefaultStyleOfRow:(NSInteger)rowIndex;
--(NSString*) getDialogText1OfRow:(NSInteger)rowIndex;
--(NSString*) getDialogText2OfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogDisplayText1OfRow:(NSInteger)rowIndex;
+-(NSString*) getDialogDisplayText2OfRow:(NSInteger)rowIndex;
 
 -(void) checkDialogsStartTimeSequences;
 -(void) sortDialogsByStartTime;

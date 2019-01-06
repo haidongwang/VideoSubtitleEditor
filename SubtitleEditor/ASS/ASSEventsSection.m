@@ -84,12 +84,12 @@
     return [self.dialogLines[lineIndex] getDefaultStyleName];
 }
 
--(NSString*) getDialogText1OfLine:(NSInteger)lineIndex {
-    return [self.dialogLines[lineIndex] getDialogText1];
+-(NSString*) getDialogDisplayText1OfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogText1DisplayString];
 }
 
--(NSString*) getDialogText2OfLine:(NSInteger)lineIndex {
-    return [self.dialogLines[lineIndex] getDialogText2];
+-(NSString*) getDialogDisplayText2OfLine:(NSInteger)lineIndex {
+    return [self.dialogLines[lineIndex] getDialogText2DisplayString];
 }
 
 -(void) checkDialogsStartTimeSequences {

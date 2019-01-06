@@ -87,11 +87,11 @@
         return cellView;
     } else if (tableColumn == tableView.tableColumns[4]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogTopText" owner:self];
-        cellView.textField.stringValue = [self.assManager getDialogText1OfRow:row];
+        cellView.textField.stringValue = [self.assManager getDialogDisplayText1OfRow:row];
         return cellView;
     } else if (tableColumn == tableView.tableColumns[5]) {
         NSTableCellView *cellView = [tableView makeViewWithIdentifier:@"DialogBotText" owner:self];
-        cellView.textField.stringValue = [self.assManager getDialogText2OfRow:row];
+        cellView.textField.stringValue = [self.assManager getDialogDisplayText2OfRow:row];
         return cellView;
     } else {
         return nil;

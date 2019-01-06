@@ -39,6 +39,8 @@
 
 -(IBAction)onOpenButtonClicked:(id)sender {
 //    [self.assManager loadTestFile];
+//    [self.tableView reloadData];
+
     [self openASSFileWithDialog];
 }
 

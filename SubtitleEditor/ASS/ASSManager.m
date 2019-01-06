@@ -11,6 +11,7 @@
 #import "ASSSection.h"
 #import "ASSEventsSection.h"
 #import "ASSDialogTableViewController.h"
+#import "StylesManager.h"
 
 @interface ASSManager()
 @property (strong) ASSFileLoader *assFileLoader;
@@ -41,9 +42,10 @@
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test2" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test3" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test4" ofType:@"ass"];
-    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test5" ofType:@"ass"];
+//    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test5" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/test6" ofType:@"ass"];
 //    NSString *assFilePath = [myBundle pathForResource:@"TestResources/short" ofType:@"ass"];
+    NSString *assFilePath = [myBundle pathForResource:@"TestResources/short2" ofType:@"ass"];
     NSLog(@"+++++++++ ass file path:%@", assFilePath);
     
     NSData* rawData = [NSData dataWithContentsOfFile:assFilePath];
@@ -52,6 +54,7 @@
 
 -(void) loadFileFromURL:(NSURL*)url {
     self.sections = [NSMutableArray array];
+    [[StylesManager sharedInstance] reset];
     
     NSData* rawData = [NSData dataWithContentsOfFile:[url path]];
     [self loadASSData:rawData];
@@ -129,12 +132,12 @@
     return [self.eventSection getDialogDefaultStyleNameOfLine:rowIndex];
 }
 
--(NSString*) getDialogText1OfRow:(NSInteger)rowIndex {
-    return [self.eventSection getDialogText1OfLine:rowIndex];
+-(NSString*) getDialogDisplayText1OfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogDisplayText1OfLine:rowIndex];
 }
 
--(NSString*) getDialogText2OfRow:(NSInteger)rowIndex {
-    return [self.eventSection getDialogText2OfLine:rowIndex];
+-(NSString*) getDialogDisplayText2OfRow:(NSInteger)rowIndex {
+    return [self.eventSection getDialogDisplayText2OfLine:rowIndex];
 }
 
 -(void) checkDialogsStartTimeSequences {

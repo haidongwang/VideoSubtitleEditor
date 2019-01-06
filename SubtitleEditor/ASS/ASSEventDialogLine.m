@@ -235,12 +235,12 @@
     return self.styleName;
 }
 
--(NSString*) getDialogText1 {
-    return [self.text1 getOutputText];
+-(NSString*) getDialogText1DisplayString {
+    return [self.text1 getDisplayText];
 }
 
--(NSString*) getDialogText2 {
-    return [self.text2 getOutputText];
+-(NSString*) getDialogText2DisplayString {
+    return [self.text2 getDisplayText];
 }
 
 -(NSInteger) getStartTimeInMiliSeconds {

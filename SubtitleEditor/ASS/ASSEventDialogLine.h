@@ -17,8 +17,8 @@
 -(NSString*) getDialogStartTimeText;
 -(NSString*) getDialogEndTimeText;
 -(NSString*) getDefaultStyleName;
--(NSString*) getDialogText1;
--(NSString*) getDialogText2;
+-(NSString*) getDialogText1DisplayString;
+-(NSString*) getDialogText2DisplayString;
 -(NSInteger) getStartTimeInMiliSeconds;
 
 -(NSComparisonResult) compare:(ASSEventDialogLine*)otherLine;

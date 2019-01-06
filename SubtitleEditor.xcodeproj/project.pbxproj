@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8E1E0F9621D4B0BE000D2237 /* ASSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1E0F9521D4B0BE000D2237 /* ASSManager.m */; };
+		8E4B8D0D21E122CE0062C79D /* StylesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B8D0C21E122CE0062C79D /* StylesManager.m */; };
+		8E4B8D1021E1EBE90062C79D /* ASSDialogStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4B8D0F21E1EBE90062C79D /* ASSDialogStyle.m */; };
 		8E6279DF21DA1A0E00F1EB89 /* ASSEventsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279DE21DA1A0E00F1EB89 /* ASSEventsSection.m */; };
 		8E6279E221DA1EE200F1EB89 /* ASSEventDialogLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279E121DA1EE200F1EB89 /* ASSEventDialogLine.m */; };
 		8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6279EA21DCE25900F1EB89 /* ASSDialogText.m */; };
@@ -27,6 +29,10 @@
 /* Begin PBXFileReference section */
 		8E1E0F9421D4B0BE000D2237 /* ASSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSManager.h; sourceTree = "<group>"; };
 		8E1E0F9521D4B0BE000D2237 /* ASSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSManager.m; sourceTree = "<group>"; };
+		8E4B8D0B21E122CE0062C79D /* StylesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StylesManager.h; sourceTree = "<group>"; };
+		8E4B8D0C21E122CE0062C79D /* StylesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StylesManager.m; sourceTree = "<group>"; };
+		8E4B8D0E21E1EBE90062C79D /* ASSDialogStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSDialogStyle.h; sourceTree = "<group>"; };
+		8E4B8D0F21E1EBE90062C79D /* ASSDialogStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSDialogStyle.m; sourceTree = "<group>"; };
 		8E6279DD21DA1A0E00F1EB89 /* ASSEventsSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSEventsSection.h; sourceTree = "<group>"; };
 		8E6279DE21DA1A0E00F1EB89 /* ASSEventsSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSEventsSection.m; sourceTree = "<group>"; };
 		8E6279E021DA1EE200F1EB89 /* ASSEventDialogLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSEventDialogLine.h; sourceTree = "<group>"; };
@@ -67,6 +73,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4B8D0A21E122B90062C79D /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				8E4B8D0B21E122CE0062C79D /* StylesManager.h */,
+				8E4B8D0C21E122CE0062C79D /* StylesManager.m */,
+				8E4B8D0E21E1EBE90062C79D /* ASSDialogStyle.h */,
+				8E4B8D0F21E1EBE90062C79D /* ASSDialogStyle.m */,
+			);
+			name = Style;
+			path = SubtitleEditor/Style;
+			sourceTree = SOURCE_ROOT;
+		};
 		8E6279E921DCE25900F1EB89 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				8E6279E921DCE25900F1EB89 /* Dialog */,
+				8E4B8D0A21E122B90062C79D /* Style */,
 				8ECF660E21D3F27300AC1D27 /* ASSSection.h */,
 				8ECF660F21D3F27300AC1D27 /* ASSFileLoader.h */,
 				8ECF661021D3F27300AC1D27 /* ASSSection.m */,
@@ -207,6 +226,7 @@
 				8E6279EE21DCE25900F1EB89 /* ASSDialogText.m in Sources */,
 				8ECF660321D3A7E200AC1D27 /* SEMainWindowController.m in Sources */,
 				8ECF65F121D25B3800AC1D27 /* main.m in Sources */,
+				8E4B8D1021E1EBE90062C79D /* ASSDialogStyle.m in Sources */,
 				8E6279F421DF6D1E00F1EB89 /* ASSDialogTableViewController.m in Sources */,
 				8ECF661321D3F27400AC1D27 /* ASSFileLoader.mm in Sources */,
 				8E6279EF21DCE25900F1EB89 /* ASSDialogTimeFrame.m in Sources */,
@@ -214,6 +234,7 @@
 				8ECF661221D3F27400AC1D27 /* ASSSection.m in Sources */,
 				8E1E0F9621D4B0BE000D2237 /* ASSManager.m in Sources */,
 				8E6279DF21DA1A0E00F1EB89 /* ASSEventsSection.m in Sources */,
+				8E4B8D0D21E122CE0062C79D /* StylesManager.m in Sources */,
 				8E6279E221DA1EE200F1EB89 /* ASSEventDialogLine.m in Sources */,
 				8ECF65E921D25B3600AC1D27 /* AppDelegate.m in Sources */,
 			);

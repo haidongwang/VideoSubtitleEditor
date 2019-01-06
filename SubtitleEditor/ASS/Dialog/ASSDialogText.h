@@ -12,6 +12,7 @@
 
 -(id) initWithText:(NSString*)text;
 -(NSString*) getOutputText;
+-(NSString*) getDisplayText;
 -(BOOL) isEmpty;
 
 @end
